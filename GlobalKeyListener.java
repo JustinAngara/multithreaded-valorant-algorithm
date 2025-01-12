@@ -20,6 +20,7 @@ public class GlobalKeyListener implements Runnable {
       if ((User32.INSTANCE.GetAsyncKeyState(vkLButton) & 0x8000) != 0) {
         // If the left mouse button is held down, set isTriggerOn to false
         isTriggerOn = false;
+        System.out.println("NAJAJA");
       }
       isMovementKeyPressed = 
           isKeyDown(vkCodeW) || isKeyDown(vkCodeA) || 

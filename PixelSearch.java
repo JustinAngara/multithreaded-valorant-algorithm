@@ -1,5 +1,4 @@
 import java.awt.AWTException;
-import java.awt.Color;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.image.BufferedImage;
@@ -7,21 +6,13 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import javax.imageio.ImageIO;
 import com.sun.jna.Native;
-import com.sun.jna.Pointer;
 import com.sun.jna.platform.win32.WinDef;
 import com.sun.jna.win32.StdCallLibrary;
 import com.sun.jna.platform.win32.WinGDI;
 import com.sun.jna.platform.win32.WinNT;
-import com.sun.jna.Structure;
+
 public class PixelSearch implements Runnable {
 
 
@@ -104,8 +95,7 @@ public class PixelSearch implements Runnable {
       int pixelColor = pixelData[i] & 0xFFFFFF;  // strip alpha
       int r = (pixelColor) & 0xFF;               
       int g = (pixelColor >> 8) & 0xFF;          
-      int b = (pixelColor >> 16) & 0xFF;         
-      
+
       // Color comparison logic can go here
       if (Math.abs(r - 250) <= 70 && Math.abs(g - 100) <= 70) {
         return pixelColor;
@@ -167,13 +157,14 @@ public class PixelSearch implements Runnable {
   @Override
   public void run() {
     Thread.currentThread().setPriority(Thread.MAX_PRIORITY);
+    // INSERT RESOLUTION HERE
     int x = (2560 / 2);
     int y = (1440 / 2);
     int size = 5;
     
     
     
-    long currentDelay = 180;
+    long currentDelay = 150;
     long lastClickTime = System.currentTimeMillis(); // track last delay
     
     while (true) {
