@@ -74,7 +74,7 @@ Before running, you may need to adjust hardcoded paths and values:
     *   Update `scriptPath` to the absolute path of `main.py`.
     ```java
     static String pythonPath = "C:/msys64/ucrt64/bin/python.exe"; // Change this
-    static String scriptPath = "c:/Users/justi/JavaScript Programs/python shit not rly javascript/main.py"; // Change this
+    static String scriptPath = ""; // Change this
     ```
 
 2.  **Screen Resolution in `PixelSearch.java`**:
