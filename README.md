@@ -9,7 +9,7 @@ The application emphasizes performance by leveraging Java for the computationall
 
 ## Features
 
-*   **High-Performance Pixel Scanning**: Utilizes Java with JNA (Java Native Access) for direct interaction with Windows GDI32 APIs, enabling fast screen capture and analysis (claimed 3-5ms for a 10x10 pixel area).
+*   **High-Performance Pixel Scanning**: Utilizes Java with JNA (Java Native Access) for direct interaction with Windows GDI32 APIs, enabling fast screen capture and analysis (claimed 3-5ms for a 10x10 pixel area AND key input).
 *   **Target Color Detection**: Scans a 10x10 pixel boundary at the screen center for a configurable color range. Currently configured to detect a reddish/pink hue (R: ~250±70, G: ~100±70).
 *   **Multithreaded Architecture**: Employs a thread pool to manage concurrent tasks: pixel searching, global key listening, and process management.
 *   **Automated Action via Python**: When a target is detected, a command is sent to a separate Python script (`main.py`) which uses `pyautogui` to simulate a key press (default: 'k').
